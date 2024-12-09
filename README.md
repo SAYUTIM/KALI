@@ -1,4 +1,5 @@
 # コースパワー、キューポート自動ログイン拡張機能
+# KALI (Kute Auto LogIn)
 
 ## 概要
 この Chrome 拡張機能は、[CoursePower](https://study.ns.kogakuin.ac.jp/lms/lginLgir/) および [ku-port](https://ku-port.sc.kogakuin.ac.jp)  でログインボタンを2回押す手間を省きます。
