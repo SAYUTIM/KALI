@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>AutoLogin</title>
+    <link rel="stylesheet" href="options.css">
+</head>
+<body>
+    <div class="container">
+        <h1>自動ログイン機能</h1>
+
+        <label for="username">ユーザー名</label>
+        <input type="text" id="username" placeholder="ユーザー名を入力">
+
+        <label for="password">パスワード</label>
+        <input type="password" id="password" placeholder="パスワードを入力">
+
+        <div class="switch-container">
+            <div class="switch">
+                <label>
+                    <input type="checkbox" id="auto-login">
+                    <span class="slider"></span>
+                </label>
+            </div>
+        </div>
+
+        <button id="save">保存</button>
+        <p id="status"></p>
+    </div>
+
+    <script src="options.js"></script>
+</body>
+</html>

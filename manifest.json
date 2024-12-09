@@ -1,0 +1,12 @@
+{
+  "manifest_version": 3,
+  "name": "AutoLogin",
+  "description": "CoursePowerのログインを自動化する拡張機能",
+  "version": "1.2.1",
+  "permissions": ["activeTab", "storage", "scripting"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "host_permissions": ["https://study.ns.kogakuin.ac.jp/*", "https://auth.kogakuin.ac.jp/*"],
+  "options_page": "options.html"
+}
