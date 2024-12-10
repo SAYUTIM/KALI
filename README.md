@@ -6,7 +6,7 @@
 
 ## 導入方法
 
-1. [拡張機能のダウンロードリンク](https://github.com/SAYUTIM/KALI/raw/refs/heads/main/KALI_ver2.0.0.zip)から ZIP ファイルをダウンロードします。
+1. [拡張機能のダウンロードリンク](https://github.com/SAYUTIM/KALI/raw/refs/heads/main/KALI_ver2.1.1.zip)から ZIP ファイルをダウンロードします。
 
 2. ダウンロードした ZIP ファイルを任意の場所へ解凍します。
 
@@ -30,4 +30,5 @@
 
 ## 使い方
 
+ログイン:<br>
 [CoursePower](https://study.ns.kogakuin.ac.jp/lms/lginLgir/) もしくは [ku-port](https://ku-port.sc.kogakuin.ac.jp) を開くと自動でログインされます。
