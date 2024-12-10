@@ -6,7 +6,7 @@
 
 ## 導入方法
 
-1. [拡張機能のダウンロードリンク](https://github.com/SAYUTIM/KALI/raw/refs/heads/main/AutoLogin_ver1.2.1.zip)から ZIP ファイルをダウンロードします。
+1. [拡張機能のダウンロードリンク](https://github.com/SAYUTIM/KALI/raw/refs/heads/main/AutoLogin_ver1.2.2.zip)から ZIP ファイルをダウンロードします。
 
 2. ダウンロードした ZIP ファイルを任意の場所へ解凍します。
 
