@@ -28,8 +28,11 @@ document.addEventListener("DOMContentLoaded", async () => {
         window.location.href = 'https://study.ns.kogakuin.ac.jp/lms/lginLgir/';
     }
     else if (location.href.startsWith("https://auth.kogakuin.ac.jp/idp/profile/SAML2/Redirect/")) {
-        inputText("j_username", credentials.username);
-        inputText("j_password", credentials.password);
-        autoClickButton("_eventId_proceed");
+        const errorElement = document.querySelector("p.form-element.form-error");
+        if(!errorElement) {
+            inputText("j_username", credentials.username);
+            inputText("j_password", credentials.password);
+            autoClickButton("_eventId_proceed");
+        }
     }
 });
