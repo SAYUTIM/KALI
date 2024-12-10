@@ -31,8 +31,8 @@
 ## 機能
 
 ### ・ログイン
-[CoursePower](https://study.ns.kogakuin.ac.jp) もしくは [ku-port](https://ku-port.sc.kogakuin.ac.jp) を開くと自動でログインされます。
-使用する場合はユーザー名とパスワードを入力してください。
+> [CoursePower](https://study.ns.kogakuin.ac.jp) もしくは [ku-port](https://ku-port.sc.kogakuin.ac.jp) を開くと自動でログインされます。
+> 使用する場合はユーザー名とパスワードを入力してください。
 
 ### ・現在時刻
 [CoursePower](https://study.ns.kogakuin.ac.jp) で右上に現在時刻と、授業開始もしくは終了までの時間が表示されます。
