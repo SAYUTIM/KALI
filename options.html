@@ -2,12 +2,12 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>AutoLogin</title>
+    <title>KALI</title>
     <link rel="stylesheet" href="options.css">
 </head>
 <body>
     <div class="container">
-        <h1>自動ログイン機能</h1>
+        <h1>KALI</h1>
 
         <label for="username">ユーザー名</label>
         <input type="text" id="username" placeholder="ユーザー名を入力">
@@ -16,15 +16,29 @@
         <input type="password" id="password" placeholder="パスワードを入力">
 
         <div class="switch-container">
-            <div class="switch">
-                <label>
-                    <input type="checkbox" id="auto-login">
-                    <span class="slider"></span>
-                </label>
-            </div>
+            <span class="switch-label">自動ログイン</span>
+            <label class="switch">
+                <input type="checkbox" id="auto-login">
+                <span class="slider"></span>
+            </label>
         </div>
 
-        <button id="save">保存</button>
+        <div class="switch-container">
+            <span class="switch-label">現在時刻</span>
+            <label class="switch">
+                <input type="checkbox" id="show-time">
+                <span class="slider"></span>
+            </label>
+        </div>
+
+        <div class="switch-container">
+            <span class="switch-label">Meet</span>
+            <label class="switch">
+                <input type="checkbox" id="auto-meet">
+                <span class="slider"></span>
+            </label>
+        </div>
+
         <p id="status"></p>
     </div>
 
