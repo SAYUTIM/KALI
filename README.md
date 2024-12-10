@@ -30,16 +30,16 @@
 
 ## 機能
 
-### ログイン：
+### ・ログイン
 [CoursePower](https://study.ns.kogakuin.ac.jp) もしくは [ku-port](https://ku-port.sc.kogakuin.ac.jp) を開くと自動でログインされます。
 使用する場合はユーザー名とパスワードを入力してください。
 
-### 現在時刻：
+### ・現在時刻
 [CoursePower](https://study.ns.kogakuin.ac.jp) で右上に現在時刻と、授業開始もしくは終了までの時間が表示されます。
 
-### 出席：(ベータ機能、情報学部の論理回路のみ対応)
+### ・出席 (ベータ機能、情報学部の論理回路のみ対応)
 水曜日の寝る前もしくは木曜日の授業が始まる前までに[CoursePower](https://study.ns.kogakuin.ac.jp)のてきとうなページを開き放置しているだけで10:09に出席ボタンを押し、meetに参加して11:35に勝手に退出します。
 使用する場合はMeet機能もONにしてください。
 
-### Meet：
+### ・Meet
 [Meet](https://meet.google.com/) を開くと自動でカメラとマイクをオフにして参加します。
