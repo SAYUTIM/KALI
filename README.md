@@ -2,7 +2,7 @@
 # KALI (Kute Auto LogIn)
 
 ## 概要
-この Chrome 拡張機能は、[CoursePower](https://study.ns.kogakuin.ac.jp/lms/lginLgir/) および [ku-port](https://ku-port.sc.kogakuin.ac.jp)  でログインボタンを2回押す手間を省きます。
+この Chrome 拡張機能は、[CoursePower](https://study.ns.kogakuin.ac.jp) および [ku-port](https://ku-port.sc.kogakuin.ac.jp)  でログインボタンを2回押す手間を省きます。
 
 ## 導入方法
 
@@ -28,7 +28,18 @@
 
 5. 「設定が保存されました。」と表示されれば成功です。
 
-## 使い方
+## 機能
 
-ログイン:<br>
-[CoursePower](https://study.ns.kogakuin.ac.jp/lms/lginLgir/) もしくは [ku-port](https://ku-port.sc.kogakuin.ac.jp) を開くと自動でログインされます。
+###ログイン：
+[CoursePower](https://study.ns.kogakuin.ac.jp) もしくは [ku-port](https://ku-port.sc.kogakuin.ac.jp) を開くと自動でログインされます。
+使用する場合はユーザー名とパスワードを入力してください。
+
+###現在時刻：
+[CoursePower](https://study.ns.kogakuin.ac.jp) で右上に現在時刻と、授業開始もしくは終了までの時間が表示されます。
+
+###出席：(ベータ機能、情報学部の論理回路のみ対応)
+水曜日の寝る前もしくは木曜日の授業が始まる前までに[CoursePower](https://study.ns.kogakuin.ac.jp)のてきとうなページを開き放置しているだけで10:09に出席ボタンを押し、meetに参加して11:35に勝手に退出します。
+使用する場合はMeet機能もONにしてください。
+
+###Meet：
+[Meet](https://meet.google.com/) を開くと自動でカメラとマイクをオフにして参加します。
