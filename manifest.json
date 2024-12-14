@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "KALI",
+  "description": "詳細はこちらへ:https://github.com/SAYUTIM/KALI",
+  "version": "1.0.0",
+  "permissions": [
+    "tabs",
+    "activeTab", 
+    "storage", 
+    "scripting",
+    "contextMenus"
+  ],
+  "background": {
+    "service_worker": "inject.js"
+  },
+  "host_permissions": [
+    "https://study.ns.kogakuin.ac.jp/*", 
+    "https://auth.kogakuin.ac.jp/*", 
+    "https://meet.google.com/*"
+  ],
+  "options_page": "setting/options.html",
+  "icons": {
+    "16": "icon/icon16.png",
+    "48": "icon/icon48.png",
+    "128": "icon/icon128.png"
+  }
+}

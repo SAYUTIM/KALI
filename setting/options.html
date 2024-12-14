@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>KALI</title>
+    <link rel="stylesheet" href="options.css">
+</head>
+<body>
+    <div class="loading">
+        <div class="orbit4 leo"></div>
+        <div class="orbit3 leo"></div>
+        <div class="orbit2 leo"></div>
+        <div class="orbit1 w1 leo"></div>
+        <div class="orbit1 w2 leo"></div>
+        <div class="orbit1 w3 leo"></div>
+    </div>
+
+    <div class="container">
+        <h1 class="box_color">KALI</h1>
+
+        <label for="username">ユーザー名</label>
+        <input type="text" id="username" placeholder="ユーザー名を入力">
+
+        <label for="password">パスワード</label>
+        <input type="password" id="password" placeholder="パスワードを入力">
+
+        <div class="switch-container">
+            <span class="switch-label">自動ログイン</span>
+            <label class="switch">
+                <input type="checkbox" id="auto-login">
+                <span class="slider"></span>
+            </label>
+        </div>        
+
+        <div class="switch-container">
+            <span class="switch-label">時間表示</span>
+            <label class="switch">
+                <input type="checkbox" id="show-time">
+                <span class="slider"></span>
+            </label>
+        </div>
+
+        <div class="switch-container">
+            <span class="switch-label">[開発中] 自動出席</span>
+            <label class="switch">
+                <input type="checkbox" id="auto-attend">
+                <span class="slider"></span>
+            </label>
+        </div>
+
+        <div class="switch-container">
+            <span class="switch-label">Meetミュート参加</span>
+            <label class="switch">
+                <input type="checkbox" id="auto-meet">
+                <span class="slider"></span>
+            </label>
+        </div>
+
+        <div class="switch-container">
+            <span class="switch-label">履修中科目のみ表示</span>
+            <label class="switch">
+                <input type="checkbox" id="search-subject">
+                <span class="slider"></span>
+            </label>
+        </div>
+
+        <div class="switch-container">
+            <span class="switch-label">回答内容保存</span>
+            <label class="switch">
+                <input type="checkbox" id="writting-save">
+                <span class="slider"></span>
+            </label>
+        </div>
+
+        <div class="switch-container">
+            <span class="switch-label">ダークモード</span>
+            <label class="switch">
+                <input type="checkbox" id="dark-mode">
+                <span class="slider"></span>
+            </label>
+        </div>
+
+        <p id="status">設定が保存されました</p>
+    </div>
+
+    <div class="container attendsetting" style="display: none;">
+        <h2 class="gradient-label">自動出席</h2>
+        <label for="course-id">授業ID</label>
+        <input type="text" id="course-id" placeholder="KOGxxxxxxxxxxxxx">
+    
+        <label for="meet-id">Meet ID</label>
+        <input type="text" id="meet-id" placeholder="xxx-xxxx-xxx">
+    
+        <div class="inline-container">
+            <div>
+                <select id="day-select">
+                    <option value="1">月曜日</option>
+                    <option value="2">火曜日</option>
+                    <option value="3">水曜日</option>
+                    <option value="4">木曜日</option>
+                    <option value="5">金曜日</option>
+                    <option value="6">土曜日</option>
+                </select>
+            </div>
+    
+            <div>
+                <select id="class-period">
+                    <option value="2">2限</option>
+                    <option value="3">3限</option>
+                    <option value="4">4限</option>
+                    <option value="5">5限</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    
+    <script src="options.js"></script>
+    <script src="css.js"></script>
+</body>
+</html>

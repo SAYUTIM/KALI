@@ -1,0 +1,354 @@
+body {
+    background-color: black;
+    color: white;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    min-height: 100vh;
+    padding: 20px 0;
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+
+.container {
+    text-align: center;
+    padding: 40px;
+    border: 8px solid transparent;
+    border-radius: 15px;
+    background-color: black;
+    animation: rainbow-border 4s linear infinite;
+    background-clip: content-box;
+    font-size: 20px;
+    max-width: 600px;
+    margin-top: 20px;
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    font-size: 24px;
+}
+
+input[type="text"], input[type="password"] {
+    margin-bottom: 25px;
+    padding: 10px;
+    width: 80%;
+    max-width: 400px;
+    font-size: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.switch-container {
+    margin: 20px auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 300px;
+    font-size: 20px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 80px;
+    height: 40px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: gray;
+    transition: 0.4s;
+    border-radius: 25px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 30px;
+    width: 30px;
+    left: 5px;
+    bottom: 5px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #66ff66;
+}
+
+input:checked + .slider:before {
+    transform: translateX(40px);
+}
+
+
+input:checked + .slider {
+    box-shadow: 0 0 20px 5px #66ff66;
+}
+
+input:checked + .slider:before {
+    box-shadow: 0 0 15px 3px white;
+}
+
+input:checked ~ .switch-label {
+    color: #66ff66; /* 緑色 */
+    text-shadow: 0 0 10px #66ff66, 0 0 20px #66ff66;
+}
+
+@keyframes label-color-move {
+    0% {
+        background-position-x: 200%;
+    }
+    100% {
+        background-position-x: 0%;
+    }
+}
+
+.gradient-label {
+    background: linear-gradient(to right, rgb(36, 255, 226), rgb(255, 42, 198), rgb(36, 255, 226)) 0% center/200%;
+    animation: label-color-move 0.65s linear infinite;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+}
+
+@keyframes rainbow-border {
+    0% {
+        border-image: linear-gradient(45deg, red, orange, yellow, green, blue, indigo, violet) 1;
+    }
+    50% {
+        border-image: linear-gradient(135deg, red, orange, yellow, green, blue, indigo, violet) 1;
+    }
+    100% {
+        border-image: linear-gradient(45deg, red, orange, yellow, green, blue, indigo, violet) 1;
+    }
+}
+
+.box_color {
+    background: linear-gradient(to right, rgb(223, 1, 215), rgb(46, 46, 254), rgb(223, 1, 215)) 0% center/200%;
+    animation: box_color 2s linear infinite;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+}
+
+@keyframes box_color {
+    0% {
+        background-position-x: 200%;
+    }
+    100% {
+        background-position-x: 0%;
+    }
+}
+
+
+@keyframes spin {
+from {
+transform: rotate(0);
+}
+to{
+transform: rotate(359deg);
+}
+}
+
+@keyframes spin3D {
+from {
+transform: rotate3d(.5,.5,.5, 360deg);
+}
+to{
+transform: rotate3d(0deg);
+}
+}
+
+@keyframes configure-xclockwise {
+0% {
+transform: rotate(45deg);
+}
+25% {
+transform: rotate(-45deg);
+}
+50% {
+transform: rotate(-135deg);
+}
+75% {
+transform: rotate(-225deg);
+}
+100% {
+transform: rotate(-315deg);
+}
+}
+
+#status {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    color: lightgreen;
+    font-size: 18px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+
+.loading {
+position: fixed;
+width: 100vw;
+height: 100vh;
+top: 0px;
+left: 0px;
+background: black;
+z-index: 9999;
+}
+
+.leo {
+position: absolute;
+top: 0;
+right: 0;
+bottom: 0;
+left: 0;
+margin: auto;
+display: flex;
+justify-content: center;
+align-items: center;
+border-radius: 50%;
+}
+
+.orbit4 {
+width: 165px;
+height: 165px;
+border: 3px solid #ff6e6e;
+
+-webkit-animation: spin3D 3s linear .2s infinite;
+animation: spin3D 3s linear .2s infinite;
+}
+
+.orbit3 {
+width: 120px;
+height: 120px;
+border: 2px solid #7eecff;
+-webkit-animation: spin3D 2s linear 0s infinite;
+animation: spin3D 2s linear 0s infinite;
+}
+
+.orbit2 {
+width: 90px;
+height: 90px;
+border: 1px solid #d2b0ff;
+-webkit-animation: spin3D 1s linear 0s infinite;
+animation:spin3D 1s linear 0s infinite;
+}
+
+.orbit1 {
+width: 60px;
+height: 60px;
+border: 1px solid #f2ff00;
+-webkit-animation: spin3D 10s linear 0s infinite;
+animation:spin3D 10s linear 0s infinite;
+}
+
+.w1 {
+transform: rotate3D(1, 1, 1, 90deg);
+}
+
+.w2 {
+transform: rotate3D(1, 2, .5, 90deg);
+}
+
+.attendsetting select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    font-size: 18px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #222;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+.attendsetting select:hover {
+    background-color: #444;
+}
+
+.attendsetting select:focus {
+    outline: none;
+    border: 1px solid #66ff66;
+    background-color: #333;
+}
+
+.attendsetting {
+    position: absolute;
+    top: 50%;
+    right: 10%;
+    transform: translateY(-50%);
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: none;
+}
+
+.attendsetting label {
+    font-size: 18px;
+    color: #ccc;
+    margin-top: 10px;
+}
+
+.attendsetting input {
+    padding: 8px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #222;
+    color: white;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+}
+
+.attendsetting input:focus {
+    background-color: #333;
+    outline: none;
+    border-color: #66ff66;
+}
+
+.attendsetting .inline-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    width: 100%;
+}
+
+.attendsetting .inline-container div {
+    flex: 1;
+}
+
+.attendsetting select {
+    width: 90%;
+    padding: 8px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #222;
+    color: white;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+}
