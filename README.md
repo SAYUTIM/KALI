@@ -27,7 +27,7 @@
 
 ### 余談
 
-ユーザー名とパスワードを入力する際は、[ここ](chrome://password-manager/passwords/kogakuin.ac.jp)にアクセスすると**素早くユーザー名とパスワードを取得**できます。
+ユーザー名とパスワードを入力する際は、`chrome://password-manager/passwords/kogakuin.ac.jp`にアクセスすると**素早くユーザー名とパスワードを取得**できます。
 
 
 ## 機能🎉
