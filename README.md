@@ -33,23 +33,28 @@
 ## 機能🎉
 
 ### 自動ログイン
-　　 [CoursePower](https://study.ns.kogakuin.ac.jp) もしくは [ku-port](https://ku-port.sc.kogakuin.ac.jp) を開くと自動でログインされます。
-　　**使用する場合はユーザー名とパスワードを入力してください。**
+　　 [CoursePower](https://study.ns.kogakuin.ac.jp) もしくは [ku-port](https://ku-port.sc.kogakuin.ac.jp) を開くと自動でログインされます。**使用する場合はユーザー名とパスワードを入力してください。**
+
 
 ### 時間表示
 　　[CoursePower](https://study.ns.kogakuin.ac.jp) で右上に現在時刻と、授業開始もしくは終了までの時間が表示されます。
 
+
 ### 自動出席 (ベータ機能、現在使用不可)
 　　授業ID、meetIDを入力し曜日と時間を選択するだけで自動で出席ボタンを押しmeetに参加して、授業終了5分前に退出します。
+
 
 ### Meetミュート参加
 　　[Meet](https://meet.google.com/) を開くと自動でカメラとマイクをオフにして参加します。
 
+
 ### 履修中科目のみ表示
 　　[CoursePower](https://study.ns.kogakuin.ac.jp)で現在履修中の科目のみを表示します。集中講座などには現在対応していません。
 
+
 ### 回答内容保存
 　　時間経過によるログアウトや、ブラウザバック、別ページへの遷移などを行ってもそれまでテキストエリアに書いていた内容を保存できます。
+
 
 ### ダークモード
 　　[CoursePower](https://study.ns.kogakuin.ac.jp)にダークモードのテーマを適用します。
