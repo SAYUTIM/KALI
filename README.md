@@ -1,5 +1,5 @@
 # KALI (Kute Auto LogIn)
-工学院大学での生活を少し怠惰にできる拡張機能。
+**工学院大学での生活を少し怠惰にできる拡張機能。**
 
 ![KALI](https://github.com/user-attachments/assets/7016e2a6-4f48-4654-a573-700a24e64f0e)
 
