@@ -22,12 +22,12 @@
 
 function DarkMode() {
     const darkModeStyles = `
-        .cpButton.highlight, .dataBox, body, .menuColumn, .homeProfHeader, .homeProfContents, .homeProfImage, .study, .last_login_date, .dayBox, .cpLabel, .courseCardArea, .newsArea, .newsBlock, .newsTitle, .newsContents, .newsLine {
+        table.cs_table2 tr.tdBg01, table.cs_table5 th, table.cs_table2 th, .centerLabel, .centerLabel, .cpButton, input.cs_submitBt, input.cs_Bt, input.reload, input.cs_searchBt, p.box01, .cpButton.highlight, .dataBox, body, .menuColumn, .homeProfHeader, .homeProfContents, .homeProfImage, .study, .last_login_date, .dayBox, .cpLabel, .courseCardArea, .newsArea, .newsBlock, .newsTitle, .newsContents, .newsLine {
             background-color: #000000;
             color: #ffffff;
         }
 
-        .headerContents, .breadCrumbBar, .menuColumn > ul > li > ul > li, .courseMenu, div#cs_rightVox, div#cs_tab_area li.tab_active, div#cs_tab_area li, table.cs_table3a th, table.cs_table3b th, table.courseTable3 th.bg01, div.box01, div.textarea_title01, div#cs_centerVox2, p.box06, .breadCrumb li {
+        p.box02, .headerContents, .breadCrumbBar, .menuColumn > ul > li > ul > li, .courseMenu, div#cs_rightVox, div#cs_tab_area li.tab_active, div#cs_tab_area li, table.cs_table3a th, table.cs_table3b th, table.courseTable3 th.bg01, div.box01, div.textarea_title01, div#cs_centerVox2, p.box06, .breadCrumb li {
             background-color: #000000;
         }
 
@@ -108,6 +108,10 @@ function DarkMode() {
             color: #ffab00;
         }
 
+        .menuColumn li.current > a {
+            background-color: #ffab00;
+        }
+
         .courseCardArea input {
             display: none;
         }
@@ -148,9 +152,23 @@ function DarkMode() {
             border: 1px solid #ffffff;
         }
 
+        h3 {
+            color: #ffffff;
+        }
+
         h3.cs_h301 {
             background-color: #494949;
             border-left: 5px solid #bbbbbb;
+            color: #ffffff;
+        }
+
+        h3.cs_h303 {
+            background-color: #636363;
+            border-left: 5px solid #ffffff;
+        }
+
+        h4.cs_h402 {
+            background-color: #000000;
             color: #ffffff;
         }
 
