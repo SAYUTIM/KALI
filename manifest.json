@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "KALI",
   "description": "詳細はこちらへ:https://github.com/SAYUTIM/KALI",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "permissions": [
     "tabs",
     "activeTab", 
