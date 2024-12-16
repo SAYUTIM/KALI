@@ -1,3 +1,8 @@
+```
+Copyright (c) 2024 SAYU
+This software is released under the MIT License, see LICENSE.
+```
+
 async function getCredentials() {
     return new Promise((resolve) => {
         chrome.storage.sync.get(["username", "password"], (result) => {

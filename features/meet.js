@@ -1,3 +1,8 @@
+```
+Copyright (c) 2024 SAYU
+This software is released under the MIT License, see LICENSE.
+```
+
 const disableCameraMic = () => {
     const cameraButton = document.querySelector('[aria-label="カメラをオフ"]');
     if (cameraButton) cameraButton.click();

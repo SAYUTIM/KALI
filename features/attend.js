@@ -1,3 +1,7 @@
+```
+Copyright (c) 2024 SAYU
+This software is released under the MIT License, see LICENSE.
+```
 /*
 const CHECK_INTERVAL = 1000;
 const FLAG_lesson = 'lesson';

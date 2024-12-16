@@ -1,3 +1,8 @@
+```
+Copyright (c) 2024 SAYU
+This software is released under the MIT License, see LICENSE.
+```
+
 (function () {
     const overlay = document.createElement('div');
     overlay.id = 'loadingOverlay';

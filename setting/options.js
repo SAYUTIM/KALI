@@ -1,3 +1,8 @@
+```
+Copyright (c) 2024 SAYU
+This software is released under the MIT License, see LICENSE.
+```
+
 const saveSettings = () => {
     const username = document.getElementById("username").value;
     const password = document.getElementById("password").value;
