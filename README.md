@@ -32,7 +32,7 @@
 ユーザー名とパスワードを入力する際は、`chrome://password-manager/passwords/kogakuin.ac.jp`にアクセスすると**素早く統合認証ユーザー名とパスワードを取得**できます。
 
 
-## 機能🎉
+# 機能🎉
 
 ### 自動ログイン
 　[CoursePower](https://study.ns.kogakuin.ac.jp) もしくは [ku-port](https://ku-port.sc.kogakuin.ac.jp) を開くと自動でログインされます。**使用する場合は統合認証ユーザー名とパスワードを入力してください。**
@@ -55,6 +55,15 @@
 ### ダークモード
 　[CoursePower](https://study.ns.kogakuin.ac.jp)にダークモードのテーマを適用します。
 
- # License
-The source code is licensed MIT. The website content is licensed CC BY 4.0,see LICENSE.
+### 課題リストアップ
+　未提出課題、未実施テストをまとめてCoursePowerホーム画面に表示します。1度教材ページを開かないと記録されません。日時の部分を押して日付を変更可能です。
+
+### 教材一覧すべて開く
+　教材一覧を全て開いた状態で表示します。
+ 
+## バージョン管理について
+　セマンティックバージョニングに基づいてバージョンアップを行っています。
+
+## OSS License
+　The source code is licensed MIT. The website content is licensed CC BY 4.0,see LICENSE.
 
