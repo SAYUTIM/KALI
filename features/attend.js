@@ -1,27 +1,50 @@
-```
-Copyright (c) 2024 SAYU
-This software is released under the MIT License, see LICENSE.
-```
+//Copyright (c) 2024 SAYU
+//This software is released under the MIT License, see LICENSE.
+
 /*
+const schedule = [
+    { start: "10:10", end: "11:40", label: "2" },
+    { start: "12:30", end: "14:00", label: "3" },
+    { start: "14:10", end: "15:40", label: "4" },
+    { start: "15:50", end: "17:20", label: "5" }
+];
+
 const CHECK_INTERVAL = 1000;
 const FLAG_lesson = 'lesson';
 const FLAG_attend = 'attend';
 const FLAG_ok = 'ok';
-const lessonID = "KOG";
-const meetID = "";
-const d = 4,h = 14, m = 0;
-*/
-/*
+let lessonID = "KOG";
+let meetID = "";
+let day = 0;
+let hours = 0;
+let minutes = 0;
+
+// 設定を取得
+chrome.storage.sync.get(["attendC", "attendM", "attendD", "attendT"], (result) => {
+    lessonID = result.attendC || lessonID;
+    meetID = result.attendM || meetID;
+    day = parseInt(result.attendD, 10) || day;
+
+    // schedule から時間を設定
+    const schedulePeriod = schedule.find(item => item.label === result.attendT});
+    if (schedulePeriod) {
+        const [h, m] = schedulePeriod.start.split(":").map(Number);
+        hours = h;
+        minutes = m;
+    }
+});
+
 function autoAttend() {
     const now = new Date();
-    const day = now.getDay();
-    const hours = now.getHours();
-    const minutes = now.getMinutes();
+    const currentDay = now.getDay();
+    const currentHours = now.getHours();
+    const currentMinutes = now.getMinutes();
 
-    if (day === d && hours === h && minutes === m) {
-
+    if (currentDay === day && currentHours === hours && currentMinutes === minutes) {
+        
         if (!(localStorage.getItem(FLAG_lesson) === 'true')) {
-            const lesson = document.querySelector("a[onclick^=\"formSubmit('"+lessonID+"')\"]");
+            
+            const lesson = document.querySelector("a[onclick^=\"formSubmit('" + lessonID + "')\"]");
             if (lesson) {
                 localStorage.setItem(FLAG_lesson, 'true');
                 lesson.click();
@@ -39,23 +62,24 @@ function autoAttend() {
         }
 
         if (!(localStorage.getItem(FLAG_ok) === 'true')) {
-            //OKボタンクリック
-            localStorage.setItem(FLAG_ok, 'true');
-            window.location.href = "https://meet.google.com/" + meetID;
+            
+            const ok = document.querySelector("input[value=\"OK\"]");
+            if (ok) {
+                localStorage.setItem(FLAG_ok, 'true');
+                ok.click();
+                chrome.tabs.create({ url: `https://meet.google.com/${meetID}` });
+            }
         }
     }
 
-    if (day === 4 && hours === 11 && minutes === 35 && !location.href.startsWith("https://study.ns.kogakuin.ac.jp/")) {
-        const outattend = document.querySelector('[aria-label="通話から退出"]');
-        if (outattend) outattend.click();
-        window.location.href = 'https://study.ns.kogakuin.ac.jp/';
-    }
 
-    if (day !== d || hours !== h || minutes !== m) {
+
+    if (currentDay !== day || currentHours !== hours || currentMinutes !== minutes) {
         localStorage.removeItem(FLAG_lesson);
         localStorage.removeItem(FLAG_attend);
         localStorage.removeItem(FLAG_ok);
     }
-}*/
+}
 
-//setInterval(autoAttend, CHECK_INTERVAL);
+setInterval(autoAttend, CHECK_INTERVAL);
+*/

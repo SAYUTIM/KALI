@@ -1,22 +1,22 @@
-```
-Copyright (c) 2024 SAYU
-This software is released under the MIT License, see LICENSE.
-```
+//Copyright (c) 2024 SAYU
+//This software is released under the MIT License, see LICENSE.
 
 const saveSettings = () => {
     const username = document.getElementById("username").value;
     const password = document.getElementById("password").value;
     const autoLogin = document.getElementById("auto-login").checked;
     const showTime = document.getElementById("show-time").checked;
-    const autoAttend = document.getElementById("auto-attend").checked;
-    const attendC = document.getElementById("course-id").checked;
-    const attendM = document.getElementById("meet-id").checked;
-    const attendD = document.getElementById("day-select").checked;
-    const attendT = document.getElementById("class-period").checked;
+    const autoAttend = document.getElementById("auto-attend").checked; 
+    const attendC = document.getElementById("course-id").value;
+    const attendM = document.getElementById("meet-id").value;
+    const attendD = document.getElementById("day-select").value;
+    const attendT = document.getElementById("class-period").value;
     const autoMeet = document.getElementById("auto-meet").checked;
     const searchSubject = document.getElementById("search-subject").checked;
     const writtingSave = document.getElementById("writting-save").checked;
     const darkMode = document.getElementById("dark-mode").checked;
+    const homework = document.getElementById("home-work").checked;
+    const openlist = document.getElementById("open-list").checked;
 
     chrome.storage.sync.set({ 
         username, 
@@ -31,7 +31,9 @@ const saveSettings = () => {
         autoMeet, 
         searchSubject, 
         writtingSave, 
-        darkMode 
+        darkMode,
+        homework,
+        openlist
     }, () => {
         document.dispatchEvent(new Event("settings-changed"));
     });
@@ -52,7 +54,9 @@ document.addEventListener("DOMContentLoaded", () => {
         "autoMeet", 
         "searchSubject", 
         "writtingSave", 
-        "darkMode"
+        "darkMode",
+        "homework",
+        "openlist"
     ], (result) => {
         document.getElementById("username").value = result.username || "";
         document.getElementById("password").value = result.password || "";
@@ -67,6 +71,8 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("search-subject").checked = result.searchSubject || false;
         document.getElementById("writting-save").checked = result.writtingSave || false;
         document.getElementById("dark-mode").checked = result.darkMode || false;
+        document.getElementById("home-work").checked = result.homework || false;
+        document.getElementById("open-list").checked = result.openlist || false;
 
         document.dispatchEvent(new Event("settings-loaded"));
     });
@@ -84,4 +90,6 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("search-subject").addEventListener("change", saveSettings);
     document.getElementById("writting-save").addEventListener("change", saveSettings);
     document.getElementById("dark-mode").addEventListener("change", saveSettings);
+    document.getElementById("home-work").addEventListener("change", saveSettings);
+    document.getElementById("open-list").addEventListener("change", saveSettings);
 });

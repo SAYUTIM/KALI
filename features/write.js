@@ -1,7 +1,5 @@
-```
-Copyright (c) 2024 SAYU
-This software is released under the MIT License, see LICENSE.
-```
+//Copyright (c) 2024 SAYU
+//This software is released under the MIT License, see LICENSE.
 
 function writting(){
     const textAreas = document.querySelectorAll("textarea");

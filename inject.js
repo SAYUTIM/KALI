@@ -1,7 +1,5 @@
-```
-Copyright (c) 2024 SAYU
-This software is released under the MIT License, see LICENSE.
-```
+//Copyright (c) 2024 SAYU
+//This software is released under the MIT License, see LICENSE.
 
 chrome.runtime.onInstalled.addListener(() => {
 
@@ -46,6 +44,22 @@ chrome.runtime.onInstalled.addListener(() => {
         else disableScript("DarkMode");
     });
 
+    chrome.storage.sync.get(["homework"], (result) => {
+        if (result.homework) enableHomework();
+        else disableScript("Homework");
+    });
+
+    chrome.storage.sync.get(["openlist"], (result) => {
+        if (result.openlist) enableOpenlist();
+        else disableScript("Openlist");
+    });
+
+});
+
+chrome.contextMenus.onClicked.addListener((info, tab) => {
+    if (info.menuItemId === "openOptions") {
+        chrome.tabs.create({ url: "setting/options.html" });
+    }
 });
 
 chrome.storage.onChanged.addListener((changes, area) => {
@@ -85,6 +99,16 @@ chrome.storage.onChanged.addListener((changes, area) => {
         if (changes.darkMode) {
             if (changes.darkMode.newValue) enableDarkMode();
             else disableScript("DarkMode");
+        }
+
+        if (changes.homework) {
+            if (changes.homework.newValue) enableHomework();
+            else disableScript("Homework");
+        }
+
+        if (changes.openlist) {
+            if (changes.openlist.newValue) enableOpenlist();
+            else disableScript("Openlist");
         }
 
     }
@@ -161,8 +185,21 @@ function enableDarkMode() {
     }]);
 }
 
-chrome.contextMenus.onClicked.addListener((info, tab) => {
-    if (info.menuItemId === "openOptions") {
-        chrome.tabs.create({ url: "setting/options.html" });
-    }
-});
+function enableHomework() {
+    chrome.scripting.registerContentScripts([{
+        id: "Homework",
+        matches: ["https://study.ns.kogakuin.ac.jp/*"],
+        js: [`${root}homework.js`],
+        runAt: "document_end"
+    }]);
+}
+
+function enableOpenlist() {
+    chrome.scripting.registerContentScripts([{
+        id: "Openlist",
+        matches: ["https://study.ns.kogakuin.ac.jp/*"],
+        js: [`${root}openlist.js`],
+        runAt: "document_end"
+    }]);
+}
+

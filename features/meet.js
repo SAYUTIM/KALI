@@ -1,9 +1,10 @@
-```
-Copyright (c) 2024 SAYU
-This software is released under the MIT License, see LICENSE.
-```
+//Copyright (c) 2024 SAYU
+//This software is released under the MIT License, see LICENSE.
 
 const disableCameraMic = () => {
+    const outattend = document.querySelector('[aria-label="通話から退出"]');
+    if(outattend) return;
+    
     const cameraButton = document.querySelector('[aria-label="カメラをオフ"]');
     if (cameraButton) cameraButton.click();
         

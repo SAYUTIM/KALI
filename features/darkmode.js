@@ -1,7 +1,5 @@
-```
-Copyright (c) 2024 SAYU
-This software is released under the MIT License, see LICENSE.
-```
+//Copyright (c) 2024 SAYU
+//This software is released under the MIT License, see LICENSE.
 
 (function () {
     const overlay = document.createElement('div');
@@ -113,8 +111,12 @@ function DarkMode() {
             color: #ffab00;
         }
 
-        .menuColumn li.current > a {
+        .menuColumn li.current > a, .menuColumn li.current > a:hover {
             background-color: #ffab00;
+        }
+
+        .menuColumn > ul > li > ul > li > a:hover {
+            background-color:#ffda90;
         }
 
         .courseCardArea input {

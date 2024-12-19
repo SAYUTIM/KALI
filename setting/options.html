@@ -24,7 +24,7 @@
         <label for="password">パスワード</label>
         <input type="password" id="password" placeholder="パスワードを入力">
 
-        <div class="switch-container">
+        <div class="switch-container" title="CoursePower もしくは ku-port を開くと自動でログインされます。使用する場合は統合認証ユーザー名とパスワードを入力してください。">
             <span class="switch-label">自動ログイン</span>
             <label class="switch">
                 <input type="checkbox" id="auto-login">
@@ -32,7 +32,7 @@
             </label>
         </div>        
 
-        <div class="switch-container">
+        <div class="switch-container" title="CoursePowerで右上に現在時刻と、授業開始もしくは終了までの時間が表示されます。">
             <span class="switch-label">時間表示</span>
             <label class="switch">
                 <input type="checkbox" id="show-time">
@@ -40,15 +40,15 @@
             </label>
         </div>
 
-        <div class="switch-container">
-            <span class="switch-label">[開発中] 自動出席</span>
+        <div class="switch-container" title="授業ID、meetIDを入力し曜日と時間を選択するだけで自動で出席ボタンを押しmeetに参加して、授業終了5分前に退出します。">
+            <span class="switch-label">[使用不可] 自動出席</span>
             <label class="switch">
                 <input type="checkbox" id="auto-attend">
                 <span class="slider"></span>
             </label>
         </div>
 
-        <div class="switch-container">
+        <div class="switch-container" title="Meet を開くと自動でカメラとマイクをオフにして参加します。">
             <span class="switch-label">Meetミュート参加</span>
             <label class="switch">
                 <input type="checkbox" id="auto-meet">
@@ -56,7 +56,7 @@
             </label>
         </div>
 
-        <div class="switch-container">
+        <div class="switch-container" title="CoursePowerで現在履修中の科目のみを表示します。集中講座などには現在対応していません。">
             <span class="switch-label">履修中科目のみ表示</span>
             <label class="switch">
                 <input type="checkbox" id="search-subject">
@@ -64,7 +64,7 @@
             </label>
         </div>
 
-        <div class="switch-container">
+        <div class="switch-container" title="時間経過によるログアウトや、ブラウザバック、別ページへの遷移などを行ってもそれまでテキストエリアに書いていた内容を保存できます。">
             <span class="switch-label">回答内容保存</span>
             <label class="switch">
                 <input type="checkbox" id="writting-save">
@@ -72,10 +72,26 @@
             </label>
         </div>
 
-        <div class="switch-container">
+        <div class="switch-container" title="CoursePowerにダークモードのテーマを適用します。">
             <span class="switch-label">ダークモード</span>
             <label class="switch">
                 <input type="checkbox" id="dark-mode">
+                <span class="slider"></span>
+            </label>
+        </div>
+
+        <div class="switch-container" title="未提出課題、未実施テストをまとめてCoursePowerホーム画面に表示します。日時の部分を押して日付を変更可能です。">
+            <span class="switch-label">課題リストアップ</span>
+            <label class="switch">
+                <input type="checkbox" id="home-work">
+                <span class="slider"></span>
+            </label>
+        </div>
+
+        <div class="switch-container" title="教材一覧を全て開いた状態で表示します。">
+            <span class="switch-label">教材一覧すべて開く</span>
+            <label class="switch">
+                <input type="checkbox" id="open-list">
                 <span class="slider"></span>
             </label>
         </div>
