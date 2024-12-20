@@ -1,7 +1,13 @@
 //Copyright (c) 2024 SAYU
 //This software is released under the MIT License, see LICENSE.
 
+const nodeadline = "期限未設定";
+
 function search() {
+
+  chrome.storage.local.get("homework", (result) => {
+    console.log(result.homework);
+  } );
 
   chrome.storage.local.get("homeworkopen", (result) => {
     const homeworkopen = result.homeworkopen;
@@ -20,40 +26,43 @@ function search() {
 
   tables.forEach((table) => {
     table.querySelectorAll("tbody tr").forEach((row) => {
-      const imgTag = row.querySelector(".kyozaititleCell img");
-      const aTag = row.querySelector(".kyozaititleCell a");
-      const dateCell = row.querySelector(".jyugyeditCell:nth-child(3)");
-      const statusSpan = row.querySelector(".jyugyeditCell span");
-      const courseDiv = document.querySelector(".courseName");
+      var imgTag = row.querySelector(".kyozaititleCell img");
+      var aTag = row.querySelector(".kyozaititleCell a");
+      var dateCell = row.querySelector(".jyugyeditCell:nth-child(3)");
+      var statusSpan = row.querySelector(".jyugyeditCell span");
+      var courseDiv = document.querySelector(".courseName");
 
       if (!imgTag || !aTag || !dateCell || !statusSpan || !courseDiv) return;
 
       if (!["テスト", "レポート"].includes(imgTag.getAttribute("alt").trim())) return;
 
-      const onclickText = aTag.getAttribute("onclick");
-      const idMatch = onclickText.match(/'([^']+)'/);
-      const numMatch = onclickText.match(/'([^']+)'/g);
+      var onclickText = aTag.getAttribute("onclick");
+      var idMatch = onclickText.match(/'([^']+)'/);
+      var numMatch = onclickText.match(/'([^']+)'/g);
       if (!idMatch || !numMatch) return;
 
-      const id = idMatch[1];
-      const num = numMatch[1].replace(/'/g, "");
-      const name = aTag.textContent.trim();
-      const date = dateCell.textContent.trim();
-      const course = courseDiv.textContent.trim().replace(/\[.*\]/, "");
-      const status = statusSpan.textContent.trim();
-      const data = { id, num, name, date, course };
-      
+      var id = idMatch[1];
+      var num = numMatch[1].replace(/'/g, "");
+      var name = aTag.textContent.trim();
+      var date = dateCell.textContent.trim();
+      var course = courseDiv.textContent.trim().replace(/\[.*\]/, "");
+      var status = statusSpan.textContent.trim();
+
+      if(["‐"].includes(date)) date = nodeadline;
+      var data = { id, num, name, date, course };
+
       chrome.storage.local.get("homework", (result) => {
-        const storedData = result.homework || [];
-        const exists = storedData.some((item) => item.id === id);
+        var storedData = result.homework || [];
+        var exists = storedData.some((item) => item.id === id);
 
         if (["未参照", "未提出", "未実施"].includes(status)) {
           if (!exists) {
             storedData.push(data);
             chrome.storage.local.set({ homework: storedData });
+            console.log(storedData);
           }
         } else if (exists || date === "公開終了") {
-          const updatedData = storedData.filter((item) => item.id !== id);
+          var updatedData = storedData.filter((item) => item.id !== id);
           chrome.storage.local.set({ homework: updatedData });
         }
       });
@@ -67,8 +76,9 @@ function show() {
 
   chrome.storage.local.get("homework", (result) => {
     let homework = result.homework || [];
+    console.log(homework);
     const validHomework = homework.filter((item) => {
-      if (item.date === "-") return true;
+      if (item.date === nodeadline) return true;
       const itemDate = new Date(item.date);
       return !isNaN(itemDate) && itemDate >= today;
     });
@@ -78,9 +88,9 @@ function show() {
     }
 
     validHomework.sort((a, b) => {
-      if (a.date === "-" && b.date === "-") return 0;
-      if (a.date === "-") return 1;
-      if (b.date === "-") return -1;
+      if (a.date === nodeadline && b.date === nodeadline) return 0;
+      if (a.date === nodeadline) return 1;
+      if (b.date === nodeadline) return -1;
       return new Date(a.date) - new Date(b.date);
     });
     
@@ -117,7 +127,7 @@ function show() {
       dateElement.addEventListener("click", (e) => {
         e.stopPropagation();
 
-        const newDate = prompt("日付を変更してください。-にすると優先度を低くできます。", item.date);
+        const newDate = prompt(`日付を変更してください：年/月/日 時:分 \n「${nodeadline}」にすると優先度を低くできます。\n今日の日付より前を入力すると削除します。`, item.date);
         if (newDate && newDate !== item.date) {
           item.date = newDate;
 
