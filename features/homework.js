@@ -117,11 +117,20 @@ function show() {
       `;
 
       const dateElement = element.querySelector(".date-element");
+
+      const itemDate = new Date(item.date);
+      const threeDaysLater = new Date(today);
+      threeDaysLater.setDate(today.getDate() + 3);
+      if (!isNaN(itemDate) && itemDate >= today && itemDate <= threeDaysLater) {
+        dateElement.style.color = "red";
+      }
+
       dateElement.addEventListener("mouseenter", () => {
         dateElement.style.color = "#007bff";
       });
       dateElement.addEventListener("mouseleave", () => {
-        dateElement.style.color = "#666";
+        const isNearDeadline = !isNaN(itemDate) && itemDate >= today && itemDate <= threeDaysLater;
+        dateElement.style.color = isNearDeadline ? "red" : "#666";
       });
 
       dateElement.addEventListener("click", (e) => {
@@ -158,6 +167,7 @@ function show() {
     });
   });
 }
+
 
 
 const formElement = document.querySelector("form#homehomlInfo");
