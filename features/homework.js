@@ -5,10 +5,6 @@ const nodeadline = "期限未設定";
 
 function search() {
 
-  chrome.storage.local.get("homework", (result) => {
-    console.log(result.homework);
-  } );
-
   chrome.storage.local.get("homeworkopen", (result) => {
     const homeworkopen = result.homeworkopen;
     if (homeworkopen) {
@@ -76,7 +72,7 @@ function show() {
 
   chrome.storage.local.get("homework", (result) => {
     let homework = result.homework || [];
-    console.log(homework);
+
     const validHomework = homework.filter((item) => {
       if (item.date === nodeadline) return true;
       const itemDate = new Date(item.date);
@@ -167,8 +163,6 @@ function show() {
     });
   });
 }
-
-
 
 const formElement = document.querySelector("form#homehomlInfo");
 if (!formElement) search();

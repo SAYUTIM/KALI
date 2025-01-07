@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "KALI",
   "description": "詳細はこちらへ:https://github.com/SAYUTIM/KALI",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "permissions": [
     "tabs",
     "activeTab", 
@@ -14,7 +14,8 @@
     "service_worker": "inject.js"
   },
   "host_permissions": [
-    "https://study.ns.kogakuin.ac.jp/*", 
+    "https://study.ns.kogakuin.ac.jp/*",
+    "https://ku-port.sc.kogakuin.ac.jp/*", 
     "https://auth.kogakuin.ac.jp/*", 
     "https://meet.google.com/*"
   ],

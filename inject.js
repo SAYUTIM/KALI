@@ -1,6 +1,10 @@
 //Copyright (c) 2024 SAYU
 //This software is released under the MIT License, see LICENSE.
 
+chrome.runtime.onMessage.addListener((message) => {
+    if (message.action === "openTab") chrome.tabs.create({ url: message.url });
+});
+
 chrome.runtime.onInstalled.addListener(() => {
 
     chrome.contextMenus.create({
@@ -53,6 +57,11 @@ chrome.runtime.onInstalled.addListener(() => {
         if (result.openlist) enableOpenlist();
         else disableScript("Openlist");
     });
+
+    /*chrome.storage.sync.get(["gpaCalc"], (result) => {
+        if (result.gpaCalc) enableGpaCalc();
+        else disableScript("gpaCalc");
+    });*/
 
 });
 
@@ -111,6 +120,11 @@ chrome.storage.onChanged.addListener((changes, area) => {
             else disableScript("Openlist");
         }
 
+        /*if (changes.gpaCalc) {
+            if (changes.gpaCalc.newValue) enableGpaCalc();
+            else disableScript("gpaCalc");
+        }*/
+
     }
 });
 
@@ -141,6 +155,9 @@ function enableTimeDisplay() {
 }
 
 function enableAutoAttend() {
+
+    enableMeetjoin();
+
     chrome.scripting.registerContentScripts([{
         id: "AutoAttendScript",
         matches: ["https://study.ns.kogakuin.ac.jp/*", "https://meet.google.com/*"],
@@ -203,3 +220,12 @@ function enableOpenlist() {
     }]);
 }
 
+/*
+function enableGpaCalc() {
+    chrome.scripting.registerContentScripts([{
+        id: "gpaCalc",
+        matches: ["https://study.ns.kogakuin.ac.jp/*"],
+        js: [`${root}gpa.js`],
+        runAt: "document_end"
+    }]);
+}*/

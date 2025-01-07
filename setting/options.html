@@ -30,28 +30,20 @@
                 <input type="checkbox" id="auto-login">
                 <span class="slider"></span>
             </label>
-        </div>        
-
-        <div class="switch-container" title="CoursePowerで右上に現在時刻と、授業開始もしくは終了までの時間が表示されます。">
-            <span class="switch-label">時間表示</span>
-            <label class="switch">
-                <input type="checkbox" id="show-time">
-                <span class="slider"></span>
-            </label>
         </div>
-
-        <div class="switch-container" title="授業ID、meetIDを入力し曜日と時間を選択するだけで自動で出席ボタンを押しmeetに参加して、授業終了5分前に退出します。">
-            <span class="switch-label">[使用不可] 自動出席</span>
+        
+        <div class="switch-container" title="授業ID、meetIDを入力し曜日と時間を選択して、コースパワーを開いておくと3分前に自動で出席ボタンを押しmeetに参加します。">
+            <span class="switch-label">自動出席</span>
             <label class="switch">
                 <input type="checkbox" id="auto-attend">
                 <span class="slider"></span>
             </label>
         </div>
 
-        <div class="switch-container" title="Meet を開くと自動でカメラとマイクをオフにして参加します。">
-            <span class="switch-label">Meetミュート参加</span>
+        <div class="switch-container" title="未提出課題、未実施テストをまとめてCoursePowerホーム画面に表示します。日時の部分を押して日付を変更可能です。">
+            <span class="switch-label">課題リストアップ</span>
             <label class="switch">
-                <input type="checkbox" id="auto-meet">
+                <input type="checkbox" id="home-work">
                 <span class="slider"></span>
             </label>
         </div>
@@ -64,6 +56,32 @@
             </label>
         </div>
 
+        <div class="switch-container" title="Meet を開くと自動でカメラとマイクをオフにして参加します。">
+            <span class="switch-label">Meetミュート参加</span>
+            <label class="switch">
+                <input type="checkbox" id="auto-meet">
+                <span class="slider"></span>
+            </label>
+        </div>
+
+        <div class="switch-container" title="CoursePowerで右上に現在時刻と、授業開始もしくは終了までの時間が表示されます。">
+            <span class="switch-label">授業時間表示</span>
+            <label class="switch">
+                <input type="checkbox" id="show-time">
+                <span class="slider"></span>
+            </label>
+        </div>
+
+    <!--
+        <div class="switch-container" title="Ku-portの成績照会で現在のGPAを表示します。">
+            <span class="switch-label">GPA自動計算</span>
+            <label class="switch">
+                <input type="checkbox" id="gpa-calc">
+                <span class="slider"></span>
+            </label>
+        </div>
+    -->
+        
         <div class="switch-container" title="時間経過によるログアウトや、ブラウザバック、別ページへの遷移などを行ってもそれまでテキストエリアに書いていた内容を保存できます。">
             <span class="switch-label">回答内容保存</span>
             <label class="switch">
@@ -76,14 +94,6 @@
             <span class="switch-label">ダークモード</span>
             <label class="switch">
                 <input type="checkbox" id="dark-mode">
-                <span class="slider"></span>
-            </label>
-        </div>
-
-        <div class="switch-container" title="未提出課題、未実施テストをまとめてCoursePowerホーム画面に表示します。日時の部分を押して日付を変更可能です。">
-            <span class="switch-label">課題リストアップ</span>
-            <label class="switch">
-                <input type="checkbox" id="home-work">
                 <span class="slider"></span>
             </label>
         </div>
@@ -101,35 +111,60 @@
 
     <div class="container attendsetting" style="display: none;">
         <h2 class="gradient-label">自動出席</h2>
-        <label for="course-id">授業ID</label>
-        <input type="text" id="course-id" placeholder="KOGxxxxxxxxxxxxx">
-    
-        <label for="meet-id">Meet ID</label>
-        <input type="text" id="meet-id" placeholder="xxx-xxxx-xxx">
+        
     
         <div class="inline-container">
             <div>
+                <select id="class-term">
+                    <option value="Q1">1Q</option>
+                    <option value="Q2">2Q</option>
+                    <option value="Q3">3Q</option>
+                    <option value="Q4">4Q</option>
+                    <option value="前期">前期</option>
+                    <option value="後期">後期</option>
+                </select>
+            </div>
+            <div>
                 <select id="day-select">
-                    <option value="1">月曜日</option>
-                    <option value="2">火曜日</option>
-                    <option value="3">水曜日</option>
-                    <option value="4">木曜日</option>
-                    <option value="5">金曜日</option>
-                    <option value="6">土曜日</option>
+                    <option value="1">月</option>
+                    <option value="2">火</option>
+                    <option value="3">水</option>
+                    <option value="4">木</option>
+                    <option value="5">金</option>
+                    <option value="6">土</option>
                 </select>
             </div>
     
             <div>
                 <select id="class-period">
-                    <option value="2">2限</option>
-                    <option value="3">3限</option>
-                    <option value="4">4限</option>
-                    <option value="5">5限</option>
+                    <option value="2限">2限</option>
+                    <option value="3限">3限</option>
+                    <option value="4限">4限</option>
+                    <option value="5限">5限</option>
                 </select>
             </div>
         </div>
+
+        <label class="checkbox-wrapper">
+        <input type="checkbox" id="attend-button">
+        <div class="checkmark">
+            <svg stroke="currentColor" fill="none" viewBox="0 0 24 24">
+            <path
+                stroke-linejoin="round"
+                stroke-linecap="round"
+                stroke-width="3"
+                d="M20 6L9 17L4 12"
+            ></path>
+            </svg>
+        </div>
+        <span class="label">出席ボタン</span>
+        </label>
+
+        <label for="meet-id">Meet URL</label>
+        <input type="text" id="meet-id" placeholder="https://meet.google.com/xxx-xxxx-xxx">
+
     </div>
-    
+
     <script src="options.js"></script>
     <script src="css.js"></script>
 </body>
