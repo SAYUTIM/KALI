@@ -1,3 +1,5 @@
+# 現在この拡張機能は使用出来ません。<br>後継である[KLPF](https://github.com/SAYUTIM/KLPF)をご利用ください。
+
 # KALI (Kute Auto LogIn)
 > **工学院大学での生活を少し怠惰にできる拡張機能。**
 
